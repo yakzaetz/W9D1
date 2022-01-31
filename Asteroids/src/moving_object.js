@@ -5,11 +5,12 @@ function MovingObject(options) {
     this.color = options["color"];
 }
 
-function MovingObject.prototype.draw(ctx) {
+MovingObject.prototype.drawCircle = function(ctx) {
     ctx.beginPath();
-    ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-    ctx.stroke();
-}
+    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+};
 
 
 module.exports = MovingObject;

@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\n\n\nwindow.MovingObject = MovingObject;\n\n\n\n//# sourceURL=webpack://Asteroids/./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\ndocument.addEventListener('DOMContentLoaded', function(){\n    const c = document.getElementById(\"game-canvas\");\n    const ctx = c.getContext(\"2d\");\n    // const mo = new MovingObject();\n    // mo.drawCircle(ctx);\n    window.ctx = ctx;\n});\n\nwindow.MovingObject = MovingObject;\n\n\n\n\n//# sourceURL=webpack://Asteroids/./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src
   \******************************/
 /***/ ((module) => {
 
-eval("function MovingObject(options) {\n    this.pos = options[\"pos\"];\n    this.vel = options[\"vel\"];\n    this.radius = options[\"radius\"];\n    this.color = options[\"color\"];\n}\n\nmodule.exports = MovingObject;\n\n//# sourceURL=webpack://Asteroids/./src/moving_object.js?");
+eval("function MovingObject(options) {\n    this.pos = options[\"pos\"];\n    this.vel = options[\"vel\"];\n    this.radius = options[\"radius\"];\n    this.color = options[\"color\"];\n}\n\nMovingObject.prototype.drawCircle = function(ctx) {\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);\n    ctx.fillStyle = this.color;\n    ctx.fill();\n};\n\n\nmodule.exports = MovingObject;\n\n//# sourceURL=webpack://Asteroids/./src/moving_object.js?");
 
 /***/ })
 
